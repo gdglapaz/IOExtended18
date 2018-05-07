@@ -1,0 +1,360 @@
+.speakers-block {
+    // background-color: #E0F7FA;
+    padding: 50px 0 0 0;
+    height: 520px;
+    overflow: hidden;
+
+    .main-title {
+        font-family: "Roboto";
+        font-weight: 300;
+        text-align: center;
+        font-size: 33px;
+        margin-bottom:1.2em;
+    }
+
+    &.open {
+        height: auto;
+    }
+}
+.speaker-card {
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    transition: all 300ms;
+    user-select: none;
+
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+    @include border-radius(4px);
+    @include into-xs {
+        width: 100%;
+        height: 405px;
+        border-radius: 3px;
+
+        // hover status
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .card-face__name {
+        color: $darken;
+        font-size: 22px;
+        line-height: 20px;
+        font-weight: 300;
+        margin-top: 0;
+        margin-bottom: 5px;
+
+        box-sizing: border-box;
+        padding: 0 20px;
+        text-align: center;
+        width: 100%;
+
+        animation: fadedown 1s;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+        &.minor {
+            font-size: 18px;
+        }
+    }
+
+    .card-face__title {
+        font-size: 12px;
+        color: lighten($darken, 40%);
+
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding: 3px 20px;
+        text-align: center;
+        box-sizing: border-box;
+        font-weight: 500;
+        animation: fadedown 1s;
+        animation-fill-mode: both;
+        animation-delay: 100ms;
+        animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        text-transform: uppercase;
+
+        // divider
+        &:after {
+            content: "";
+            // background-color: #E3EBEE;
+            width: 70px;
+            height: 1px;
+            margin: 20px auto 0 auto;
+            display: block;
+        }
+    }
+
+    .card-face-footer {
+        left: 0;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        bottom: 0px;
+        border-top: 1px solid $clouds;
+        padding-top: 10px;
+        li {
+            display: inline-block;
+        }
+
+        .card-face__social {
+            border: 1px solid transparent;
+            display: inline-block;
+            font-size: 18px;
+            color: black;
+
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            animation: socials 1.5s;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+            @include border-radius(50%);
+            @include transition(.25s);
+
+            &:hover {
+                color: white;
+            }
+            &.google-plus:hover {
+                background: $googleplus;
+                border: 1px solid darlen($googleplus, 10%);
+            }
+            &.twitter:hover {
+                background: $twitter;
+                border: 1px solid darken($twitter, 10%);
+            }
+
+            &.github:hover {
+                background: $darken;
+                border: 1px solid darken($darken, 10%);
+            }
+
+            &.speech:hover {
+                background: $teal;
+                border: 1px solid darken($teal, 10%);
+            }
+        }
+    }
+    .card-face-summary {
+        width: 100%;
+        font-weight: 300;
+        padding: 20px;
+        text-overflow: ellipsis;
+        p {margin: 0;}
+    }
+    .speaker-bio {
+        font-size: 12px;
+    }
+
+}
+
+// card face block
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    flex-direction: column;
+}
+
+// specific face-1
+.card-face.face-1 {
+    transform: translateX(0);
+
+    .show-menu & {
+        transform: translateX(-100%);
+    }
+}
+// specific face-2
+.card-face.face-2 {
+    justify-content: center;
+    transform: translateX(100%);
+
+    .show-menu & {
+        transform: translateX(0);
+    }
+}
+// menu button element
+.card-face__menu-button {
+    background: transparent;
+    border: none;
+    color: lighten($darken, 40%);
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    outline: none;
+    padding: 5px 15px;
+    transform: translateX(150%);
+    animation: menu 2s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    font-size: 25px;
+    z-index: 30;
+
+    @include transition(.25s);
+    @include border-radius(50%);
+    &:hover {
+        color: $darken;
+    }
+    &:focus { background: none; }
+}
+// back arrow button
+.card-face__back-button {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+
+    z-index: 100;
+    img {
+        pointer-events: none;
+        height: 18px;
+        width: 18px;
+    }
+
+    &:focus { background: none; }
+}
+// Settings button
+.card-face__settings-button {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+// user avatar element
+.card-face__avatar {
+    display: block;
+    width: 125px;
+    height: 125px;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+    animation: avatar 1.5s;
+    animation-delay: 200ms;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+    img {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+.more-speakers {
+    background-color: #FFF;
+    padding: 10px 0 40px 0;
+
+    .button-more {
+        display: block;
+        width: 200px;
+        margin:  0 auto;
+        font-weight: 600;
+        text-align: center;
+        // background-color: #FFF;
+        // outline: none;
+        // border: none;
+
+    }
+}
+
+
+
+
+// Animations
+// ----------------------------------------------------------------------
+
+
+@keyframes avatar {
+    from {
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+@keyframes menu {
+    from {
+        transform: translateX(150%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes fadedown {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes socials {
+    from {
+        transform: translateY(300%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+@keyframes stats {
+    from {
+        transform: translateX(300%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes bullet {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+

@@ -1,0 +1,113 @@
+.register-block {
+    background-color: $teal;
+    padding: 50px 0;
+}
+.register-card {
+    width: 100%;
+    font-family: "Roboto", Helvetica, serif;
+    color: #000;
+
+    .card-title {
+        color: $darken;
+        font-weight: 300;
+        font-size: 30px;
+    }
+
+    .register-banner {
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $teal-50;
+        padding: 20px;
+        color: $gray-600;
+
+        @include into-xs {
+            position: relative;
+        }
+
+        @include into-sm {
+            position: relative;
+        }
+
+        .title {
+            font-weight: 300;
+            font-size: 30px;
+            display: block;
+            margin: 5px 0 15px 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: darken($teal, 5%);
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 10px 0 10px 0;
+            text-transform: uppercase;
+
+        }
+
+        .bank {
+            // color: lighten($darken, 30%);
+            display: block;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        .account {
+            // background-color: lighten($teal, 95%);
+            display: block;
+            font-weight: 400;
+            font-size: 18px;
+            padding: 5px;
+            @include border-radius(5px);
+        }
+        .owner {
+            display: block;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .amount {
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .courrency {
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+        .limit {
+            display: block;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .list li {
+            list-style-type: square;
+            margin-left: 25px;
+        }
+    }
+    .without-bottom-margin {
+        margin-bottom: 0;
+    }
+}
+
+.notifyjs-bootstrap-error {
+    color: white !important;
+    text-shadow: none !important;
+    background-color: lighten($googleplus, 10%) !important;
+    border-color: lighten($googleplus, 3%) !important;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA60lEQVQ4T52TaxHCMBCEdx3gAKoAUACOAAVYaBUBDloFUAc4OGZLwoSQS2fIv+Tuvtzeg8iOma0AHADsAWyCuQdwBdCRfKQhTC9m1obgnJveW5Kn+PABmJl+WWeRY7gvs/ee5FZvE8D5eSQpObIr7RwiOUcGzfdCzjeSqoMA0r8r+DQCeLpTQEmeeJ0AnhEko0RzqtoL4BkVo0ItAFy8tswB1C4BzjWAKwHAMwQKUjpDrYi1YYq2qYjqdamNcmqCp2uvDdIc4D1IMZdaOwtaBpLTov2zTNPPP8uUZKKayEFjHJdrCOusTfxa5xd2zGf20qSgLgAAAABJRU5ErkJggg==) !important;
+    background-position: 5px 5px !important;
+    background-size: 13px !important;
+    font-family: "Roboto", Helvetica, serif;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding: 5px 8px 5px 24px !important;
+}

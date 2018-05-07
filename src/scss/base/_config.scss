@@ -1,0 +1,16 @@
+// # Global Configurations -----------------------------------------------------
+body {
+	color: $base;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: 400;
+	.form-control {
+		font-weight: 500;
+	}
+	.clearfix {
+		clear: both;
+	}
+
+
+}

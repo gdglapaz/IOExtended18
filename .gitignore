@@ -1,0 +1,65 @@
+.DS_Store
+dist/
+node_modules/
+.sass-cache/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+
+
+# OSX Finder turds
+.DS_Store
+
+# C extensions
+*.so
+
+
+
+# Distribution / packaging
+.idea/
+.sass-cache/
+bin/
+public/
+config/credentials.json
+extras/
+env/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+node_modules/
+*.egg-info/
+.installed.cfg
+*.egg
+
+
+# Unit test / coverage reports
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Deployment Tools
+config/
+fabfile.py
+
+

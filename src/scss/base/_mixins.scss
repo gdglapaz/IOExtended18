@@ -1,0 +1,489 @@
+//
+// Mixins
+// --------------------------------------------------
+
+@mixin animation($properties) {
+  -webkit-animation: $properties;
+     -moz-animation: $properties;
+       -o-animation: $properties;
+          animation: $properties;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-sizing($boxmodel: border-box) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+@mixin box-shadow($properties) {
+  -webkit-box-shadow: $properties;
+     -moz-box-shadow: $properties;
+          box-shadow: $properties;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+@mixin opacity($value) {
+  opacity: $value / 100;
+  // filter: ~"alpha(opacity=#{$value})";
+}
+
+
+@mixin block-left {
+    display: block;
+    float: left;
+}
+
+@mixin block-right {
+    display: block;
+    float: right;
+}
+
+// User select
+// For selecting text on the page
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+       -o-user-select: $select;
+          user-select: $select;
+}
+
+@mixin placeholder-height($height) {
+  &:-moz-placeholder {
+    line-height: $height;
+  }
+  &::-webkit-input-placeholder {
+    line-height: $height;
+  }
+  &.placeholder {
+    line-height: $height;
+  }
+}
+
+@mixin mask($arguments) {
+  -webkit-mask: $arguments;
+          mask: $arguments;
+}
+
+@mixin placeholder-color($color) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &.placeholder {
+    color: $color;
+  }
+}
+
+
+@mixin backface-visibility($value) {
+  -webkit-backface-visibility: $value;
+     -moz-backface-visibility: $value;
+       -o-backface-visibility: $value;
+          backface-visibility: $value;
+}
+
+@mixin transform($properties) {
+  -webkit-transform: $properties;
+     -moz-transform: $properties;
+      -ms-transform: $properties;
+       -o-transform: $properties;
+          transform: $properties;
+}
+
+@mixin grayscale-100 {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: url(resources.svg#desaturate);
+    filter: gray;
+    filter: grayscale(1);
+}
+@mixin grayscale-1 {
+    filter: grayscale(1%);
+    -webkit-filter: grayscale(1%);
+    -moz-filter: grayscale(1%);
+    -ms-filter: grayscale(1%);
+    -o-filter: grayscale(1%);
+    filter: url(resources.svg#desaturate);
+    filter: gray;
+    filter: grayscale(0);
+}
+
+@mixin vertical-gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $from), color-stop(100%, $to));
+  background: -webkit-linear-gradient(top, $from, $to);
+  background:    -moz-linear-gradient(top, $from, $to);
+  background:     -ms-linear-gradient(top, $from, $to);
+  background:      -o-linear-gradient(top, $from, $to);
+  background:   linear-gradient(to bottom, $from, $to);
+}
+
+@mixin selection($color) {
+  &::selection {
+    background: $color;
+  }
+  &::-moz-selection {
+    background: $color;
+  }
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin dropdown-arrow($color: $base, $top: 5px, $left: 15px, $size: 9px) {
+  &:before {
+    content: "";
+    border-style: solid;
+    border-width: 0 $size $size $size;
+    border-color: transparent transparent $color transparent;
+    height: 0;
+    position: absolute;
+    left: $left;
+    top: $top;
+    width: 0;
+    // Make corners smooth
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@mixin drop-ie-gradient {
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
+}
+
+@mixin swap-button-color($color, $hover, $active) {
+  background-color: $color;
+
+  &:hover,
+  &:focus,
+  .btn-group:focus &.dropdown-toggle {
+    background-color: $hover;
+  }
+  &:active,
+  .btn-group.open &.dropdown-toggle,
+  &.active {
+    background-color: $active;
+  }
+}
+
+@mixin swap-social-button($color) {
+  background-color: $color;
+
+  &:hover, &:focus {
+    background-color: mix($color, white, 80%);
+  }
+  &:active, &.active {
+    background-color: mix($color, black, 85%);
+  }
+}
+
+@mixin swap-dialog-color($color) {
+  background-color: mix($color, white, 9%);
+  border-top-color: mix($color, white, 20%);
+}
+
+@mixin dropdown-arrow-inverse {
+  border-bottom-color: $base !important;
+  border-top-color: $base !important;
+}
+
+@mixin swap-iconbar-color($color) {
+  background-color: $color;
+  > ul {
+    > li {
+      &.active {
+        > a {
+          color: mix($color, black, 66%);
+        }
+      }
+      > a {
+        &:hover, &:focus {
+          color: mix($color, black, 66%);
+        }
+      }
+    }
+  }
+  .iconbar-unread { background-color: mix($color, black, 66%); }
+}
+
+@mixin input-states($color) {
+  border-color: $color;
+  color: $color;
+  @include box-shadow(none);
+
+  &:focus {
+    @include box-shadow(none);
+  }
+}
+
+@mixin swap-pagination-color($color, $hover, $active) {
+  ul {
+    background-color: $color;
+
+    li {
+      &.previous {
+        > a {
+          border-right-color: mix($color, white, 66%);
+        }
+      }
+      > a, > span {
+        border-left-color: mix($color, white, 66%);
+
+        &:hover, &:focus {
+          background-color: $hover;
+        }
+        &:active {
+          background-color: $active;
+        }
+      }
+      &.active {
+        > a, > span {
+          background-color: $active;
+        }
+      }
+
+      &.pagination-dropdown.dropup {
+        .dropdown-arrow {
+          border-top-color: $color;
+        }
+      }
+    }
+  }
+}
+
+@mixin swap-text-color($color) {
+  color: $color;
+  &:hover, &:focus { color: mix($color, black, 80%); }
+}
+
+
+@mixin backface($value:hidden) {
+  -webkit-backface-visibility:$value;
+    -moz-backface-visibility:$value;
+    -ms-backface-visibility:$value;
+    -o-backface-visibility:$value;
+    backface-visibility:$value;
+}
+
+@mixin no-space {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin full-width {
+  width: 100%;
+  display: block;
+}
+
+@mixin reset-list {
+    padding: 0;
+    margin: 0;
+}
+
+/*
+    Example usage:
+    @include animation(10s, 5s, changecolour)
+ */
+@mixin animation ($animation, $duration: .3s, $function: linear, $mode: forwards, $iteration: 1, $delay: .1s) {
+    -webkit-animation-name:  $animation;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-timing-function: $function;
+    -webkit-animation-fill-mode: $mode;
+    -webkit-animation-iteration-count: $iteration;
+    -webkit-animation-delay: $delay;
+
+    -moz-animation-name:  $animation;
+    -moz-animation-duration: $duration;
+    -moz-animation-fill-mode: $mode;
+    -moz-animation-timing-function: $function;
+    -moz-animation-iteration-count: $iteration;
+    -moz-animation-delay: $delay;
+
+    -o-animation-name:  $animation;
+    -o-animation-duration: $duration;
+    -o-animation-fill-mode: $mode;
+    -o-animation-timing-function: $function;
+    -o-animation-iteration-count: $iteration;
+    -o-animation-delay: $delay;
+
+    animation-name:  $animation;
+    animation-duration: $duration;
+    animation-fill-mode: $mode;
+    animation-timing-function: $function;
+    animation-iteration-count: $iteration;
+    animation-delay: $delay;
+}
+
+@mixin animation-delay($delay){
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
+}
+
+@mixin animation-timing-function($function){
+  -webkit-animation-timing-function: $function;
+    -moz-animation-timing-function: $function;
+    -o-animation-timing-function: $function;
+    animation-timing-function: $function;
+}
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+
+    @-o-keyframes $animation_name {
+        @content;
+    }
+
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+@mixin user-select($value) {
+    -webkit-user-select: $value;
+    -khtml-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+    user-select: $value;
+}
+
+
+@mixin perspective($value) {
+    -webkit-perspective: $value;
+    -moz-perspective: $value;
+    -o-perspective: $value;
+    perspective: $value;
+}
+
+
+@mixin vertical-center {
+    display: block;
+    position: absolute;
+    top: 50%;
+    @include transform(translate(0%, -50%));
+}
+
+@mixin vertical-center-left {
+    display: block;
+    position: absolute;
+    top: 50%; left: 0%;
+    @include transform(translate(-50%,-50%));
+}
+
+@mixin vertical-center-right {
+    display: block;
+    position: absolute;
+    top: 50%; right: 0px;
+    @include transform(translate(-50%,-50%));
+}
+
+
+@mixin centered-block {
+    // require position relative in his father
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+}
+
+
+
+//## Responsive property utils
+
+
+// Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+// Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+// Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+// Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+
+
+
+
+
+
+@-ms-viewport{
+  width: device-width;
+}
+
+@mixin into-xs($property: jx, $value: 0){
+    @media (max-width:$screen-xs-max) {
+        @if $property != jx { #{$property}: #{$value}; }
+        @content;
+    }
+}
+
+@mixin into-sm($property: jx, $value: 0){
+    @media (min-width:$screen-sm-min) and (max-width:$screen-sm-max) {
+        @if $property != jx { #{$property}: #{$value}; }
+        @content;
+    }
+}
+
+@mixin into-md($property: jx, $value: 0){
+    @media (min-width:$screen-md-min) and (max-width:$screen-md-max) {
+        @if $property != jx { #{$property}: #{$value}; }
+        @content;
+    }
+}
+
+@mixin into-lg($property: jx, $value: 0){
+    @media (min-width:$screen-lg-min) {
+        @if $property != jx { #{$property}: #{$value}; }
+        @content;
+    }
+}

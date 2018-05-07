@@ -1,0 +1,183 @@
+
+.intro-block {
+    position: relative;
+    height: 700px;
+    .composition-box {
+        @include centered-block;
+
+        .animated-pin {
+            position: absolute;
+        }
+        .sun {
+            height: 55px;
+            top: 185px;
+            left: 445px;
+            animation: infinite-spinning 15s infinite linear;
+
+            @include into-xs {
+                height: 38px;
+                top: 115px;
+                left: 275px;
+            }
+
+            @include into-sm {
+                height: 30px;
+                top: 55px;
+                left: 200px;
+            }
+        }
+        .cloud1 {
+            width: 90px;
+            top: -40px;
+            left: 20px;
+            animation: rl-cloud1 30s infinite ease-in-out;
+            @include into-xs {
+                width: 40px;
+                top: -10px;
+                left: 40px;
+            }
+
+            @include into-sm {
+
+            }
+        }
+
+        .cloud2 {
+            width: 80px;
+            top: 0px;
+            right: 10px;
+            animation: rl-cloud2 30s infinite ease-in-out;
+            @include into-xs {
+                width: 40px;
+                top: 0px;
+                right: 20px;
+            }
+
+            @include into-sm {
+
+            }
+        }
+        .cloud3 {
+            width: 80px;
+            top: 160px;
+            left: 80px;
+            animation: rl-cloud3 40s infinite ease-in-out;
+
+            @include into-xs {
+                width: 40px;
+                top: 100px;
+                left: 60px;
+            }
+
+            @include into-sm {
+
+            }
+        }
+    }
+    .data-li {
+        @include into-xs {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        @include into-sm {
+            margin: 15px 0;
+            text-align: center;
+        }
+    }
+    .brand-box {
+        position: relative;
+        margin-bottom: -10px;
+        width: 800px;
+
+        @include into-xs {
+            width: 100%;
+        }
+
+        @include into-sm {
+            width: 700px;
+        }
+
+        .big-logo {
+            width: 500px;
+            display: block;
+            margin: 0 auto;
+
+            @include into-xs {
+                width: 320px;
+            }
+
+            @include into-sm {
+                width: 400px;
+            }
+        }
+
+    }
+    .info-box {
+        background-color: $clouds;
+        position: relative;
+        font-family: 'Roboto', Helvetica, serif;
+        padding: 15px 10px;
+        width: 100%;
+        @include border-radius(5px);
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li span {
+            display: block;
+        }
+        .pin-head, .material-icons {
+            line-height: 17px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .pin-desc {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 18px;
+        }
+        .row {
+            margin: 0;
+        }
+
+    }
+
+}
+
+
+// ANIMATIONS
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+@keyframes rl-cloud1 {
+    0% { left: 20px; }
+    50% { left: 100px; }
+    100% { left: 20px; }
+}
+
+@keyframes rl-cloud2 {
+    0% { right: 10px; }
+    50% { right: 100px; }
+    100% { right: 10px; }
+}
+
+@keyframes rl-cloud3 {
+    0% { left: 80px; }
+    50% { left: 120px; }
+    100% { left: 80px; }
+}
+
+

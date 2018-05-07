@@ -1,0 +1,815 @@
+/* animation sets */
+
+/* move from / to  */
+
+.page-moveToLeft {
+    @include animation(moveToLeft, .6s, ease, both);
+}
+
+.page-moveFromLeft {
+    @include animation(moveFromLeft, .6s, ease, both);
+}
+
+.page-moveToRight {
+    @include animation(moveToRight, .6s, ease, both);
+}
+
+.page-moveFromRight {
+    @include animation(moveFromRight, .6s, ease, both);
+}
+
+.page-moveToTop {
+    @include animation(moveToTop, .6s, ease, both);
+}
+
+.page-moveFromTop {
+    @include animation(moveFromTop, .6s, ease, both);
+}
+
+.page-moveToBottom {
+    @include animation(moveToBottom, .6s, ease, both);
+}
+
+.page-moveFromBottom {
+    @include animation(moveFromBottom, .6s, ease, both);
+}
+
+/* fade */
+
+.page-fade {
+    @include animation(fade, .7s, ease, both);
+}
+
+/* move from / to and fade */
+
+.page-moveToLeftFade {
+    @include animation(moveToLeftFade, .7s, ease, both);
+}
+
+.page-moveFromLeftFade {
+    @include animation(moveFromLeftFade, .7s, ease, both);
+}
+
+.page-moveToRightFade {
+    @include animation(moveToRightFade, .7s, ease, both);
+}
+
+.page-moveFromRightFade {
+    @include animation(moveFromRightFade, .7s, ease, both);
+}
+
+.page-moveToTopFade {
+    @include animation(moveToTopFade, .7s, ease, both);
+}
+
+.page-moveFromTopFade {
+    @include animation(moveFromTopFade, .7s, ease, both);
+}
+
+.page-moveToBottomFade {
+    @include animation(moveToBottomFade, .7s, ease, both);
+}
+
+.page-moveFromBottomFade {
+    @include animation(moveFromBottomFade, .7s, ease, both);
+}
+
+/* move to with different easing */
+
+.page-moveToLeftEasing {
+    @include animation(moveToLeft .7s, ease-in,-out, both);
+}
+.page-moveToRightEasing {
+    @include animation(moveToRight .7s, ease-in,-out, both);
+}
+.page-moveToTopEasing {
+    @include animation(moveToTop .7s, ease-in,-out, both);
+}
+.page-moveToBottomEasing {
+    @include animation(moveToBottom .7s, ease-in,-out, both);
+}
+
+/********************************* keyframes **************************************/
+
+/* move from / to  */
+
+@include keyframe(moveToLeft) {
+    to { @include transform(translateX(-100%)); }
+}
+
+
+@include keyframe (moveFromLeft) {
+    from { @include transform(translateX(-100%)); }
+}
+
+
+
+@include keyframe (moveToRight) {
+    to { @include transform(translateX(100%)); }
+}
+
+@include keyframe (moveFromRight) {
+    from { @include transform(translateX(100%)); }
+}
+
+@include keyframe (moveToTop) {
+    to { @include transform(translateY(-100%)); }
+}
+
+@include keyframe (moveFromTop) {
+    from { @include transform(translateY(-100%)); }
+}
+
+@include keyframe (moveToBottom) {
+    to { @include transform(translateY(100%)); }
+}
+
+@include keyframe (moveFromBottom) {
+    from { @include transform(translateY(100%)); }
+}
+
+/* fade */
+
+@include keyframe (fade) {
+    to { opacity: 0.3; }
+}
+
+/* move from / to and fade */
+
+@include keyframe (moveToLeftFade) {
+    to { opacity: 0.3; @include transform(translateX(-100%)); }
+}
+
+@include keyframe (moveFromLeftFade) {
+    from { opacity: 0.3; @include transform(translateX(-100%)); }
+}
+
+@include keyframe (moveToRightFade) {
+    to { opacity: 0.3; @include transform(translateX(100%)); }
+}
+
+@include keyframe (moveFromRightFade) {
+    from { opacity: 0.3; @include transform(translateX(100%)); }
+}
+
+@include keyframe (moveToTopFade) {
+    to { opacity: 0.3; @include transform(translateY(-100%)); }
+}
+
+@include keyframe (moveFromTopFade) {
+    from { opacity: 0.3; @include transform(translateY(-100%)); }
+}
+
+@include keyframe (moveToBottomFade) {
+    to { opacity: 0.3; @include transform(translateY(100%)); }
+}
+
+@include keyframe (moveFromBottomFade) {
+    from { opacity: 0.3; @include transform(translateY(100%)); }
+}
+
+/* scale and fade */
+
+.page-scaleDown {
+    @include animation(scaleDown, .7s, ease, both);
+}
+
+.page-scaleUp {
+    @include animation(scaleUp, .7s, ease, both);
+}
+
+.page-scaleUpDown {
+    @include animation(scaleUpDown, .5s, ease, both);
+}
+
+.page-scaleDownUp {
+    @include animation(scaleDownUp, .5s, ease, both);
+}
+
+.page-scaleDownCenter {
+    @include animation(scaleDownCenter, .4s, ease-in, both);
+}
+
+.page-scaleUpCenter {
+    @include animation(scaleUpCenter, .4s, ease-out, both);
+}
+
+/********************************* keyframes **************************************/
+
+/* scale and fade */
+
+@include keyframe (scaleDown) {
+    to { opacity: 0; @include transform(scale(.8)); }
+}
+
+@include keyframe (scaleUp) {
+    from { opacity: 0; @include transform(scale(.8)); }
+}
+
+@include keyframe (scaleUpDown) {
+    from { opacity: 0; @include transform(scale(1.2)); }
+}
+
+@include keyframe (scaleDownUp) {
+    to { opacity: 0; @include transform(scale(1.2)); }
+}
+
+@include keyframe (scaleDownCenter) {
+    to { opacity: 0; @include transform(scale(.7)); }
+}
+
+@include keyframe (scaleUpCenter) {
+    from { opacity: 0; @include transform(scale(.7)); }
+}
+
+/* rotate sides first and scale */
+
+.page-rotateRightSideFirst {
+    @include transform-origin(0% 50%);
+    @include animation(rotateRightSideFirst, .8s, both, ease-in);
+}
+.page-rotateLeftSideFirst {
+    @include transform-origin(100% 50%);
+    @include animation(rotateLeftSideFirst, .8s, both, ease-in);
+}
+.page-rotateTopSideFirst {
+    @include transform-origin(50% 100%);
+    @include animation(rotateTopSideFirst, .8s, both, ease-in);
+}
+.page-rotateBottomSideFirst {
+    @include transform-origin(50% 0%);
+    @include animation(rotateBottomSideFirst, .8s, both, ease-in);
+}
+
+/* flip */
+
+.page-flipOutRight {
+    @include transform-origin(50% 50%);
+    @include animation(flipOutRight, .5s, both, ease-in);
+}
+.page-flipInLeft {
+    @include transform-origin(50% 50%);
+    @include animation(flipInLeft, .5s, both, ease-out);
+}
+.page-flipOutLeft {
+    @include transform-origin(50% 50%);
+    @include animation(flipOutLeft, .5s, both, ease-in);
+}
+.page-flipInRight {
+    @include transform-origin(50% 50%);
+    @include animation(flipInRight, .5s, both, ease-out);
+}
+.page-flipOutTop {
+    @include transform-origin(50% 50%);
+    @include animation(flipOutTop, .5s, both, ease-in);
+}
+.page-flipInBottom {
+    @include transform-origin(50% 50%);
+    @include animation(flipInBottom, .5s, both, ease-out);
+}
+.page-flipOutBottom {
+    @include transform-origin(50% 50%);
+    @include animation(flipOutBottom, .5s, both, ease-in);
+}
+.page-flipInTop {
+    @include transform-origin(50% 50%);
+    @include animation(flipInTop, .5s, both, ease-out);
+}
+
+/* rotate fall */
+
+.page-rotateFall {
+    @include transform-origin(0% 0%);
+    @include animation(rotateFall, 1s, both, ease-in);
+}
+
+/* rotate newspaper */
+.page-rotateOutNewspaper {
+    @include transform-origin(50% 50%);
+    @include animation(rotateOutNewspaper, .5s, both, ease-in);
+}
+.page-rotateInNewspaper {
+    @include transform-origin(50% 50%);
+    @include animation(rotateInNewspaper, .5s, both, ease-out);
+}
+
+/* push */
+.page-rotatePushLeft {
+    @include transform-origin(0% 50%);
+    @include animation(rotatePushLeft, .8s, both, ease);
+}
+.page-rotatePushRight {
+    @include transform-origin(100% 50%);
+    @include animation(rotatePushRight, .8s, both, ease);
+}
+.page-rotatePushTop {
+    @include transform-origin(50% 0%);
+    @include animation(rotatePushTop, .8s, both, ease);
+}
+.page-rotatePushBottom {
+    @include transform-origin(50% 100%);
+    @include animation(rotatePushBottom, .8s, both, ease);
+}
+
+/* pull */
+.page-rotatePullRight {
+    @include transform-origin(100% 50%);
+    @include animation(rotatePullRight, .5s, both, ease);
+}
+.page-rotatePullLeft {
+    @include transform-origin(0% 50%);
+    @include animation(rotatePullLeft, .5s, both, ease);
+}
+.page-rotatePullTop {
+    @include transform-origin(50% 0%);
+    @include animation(rotatePullTop, .5s, both, ease);
+}
+.page-rotatePullBottom {
+    @include transform-origin(50% 100%);
+    @include animation(rotatePullBottom, .5s, both, ease);
+}
+
+/* fold */
+.page-rotateFoldRight {
+    @include transform-origin(0% 50%);
+    @include animation(rotateFoldRight, .7s, both, ease);
+}
+.page-rotateFoldLeft {
+    @include transform-origin(100% 50%);
+    @include animation(rotateFoldLeft, .7s, both, ease);
+}
+.page-rotateFoldTop {
+    @include transform-origin(50% 100%);
+    @include animation(rotateFoldTop, .7s, both, ease);
+}
+.page-rotateFoldBottom {
+    @include transform-origin(50% 0%);
+    @include animation(rotateFoldBottom, .7s, both, ease);
+}
+
+/* unfold */
+.page-rotateUnfoldLeft {
+    @include transform-origin(100% 50%);
+    @include animation(rotateUnfoldLeft, .7s, both, ease);
+}
+.page-rotateUnfoldRight {
+    @include transform-origin(0% 50%);
+    @include animation(rotateUnfoldRight, .7s, both, ease);
+}
+.page-rotateUnfoldTop {
+    @include transform-origin(50% 100%);
+    @include animation(rotateUnfoldTop, .7s, both, ease);
+}
+.page-rotateUnfoldBottom {
+    @include transform-origin(50% 0%);
+    @include animation(rotateUnfoldBottom, .7s, both, ease);
+}
+
+/* room walls */
+.page-rotateRoomLeftOut {
+    @include transform-origin(100% 50%);
+    @include animation(rotateRoomLeftOut, .8s, both, ease);
+}
+
+.page-rotateRoomLeftIn {
+    @include transform-origin(0% 50%);
+    @include animation(rotateRoomLeftIn, .8s, both, ease);
+}
+
+.page-rotateRoomRightOut {
+    @include transform-origin(0% 50%);
+    @include animation(rotateRoomRightOut, .8s, both, ease);
+}
+.page-rotateRoomRightIn {
+    @include transform-origin(100% 50%);
+    @include animation(rotateRoomRightIn, .8s, both, ease);
+}
+.page-rotateRoomTopOut {
+    @include transform-origin(50% 100%);
+    @include animation(rotateRoomTopOut, .8s, both, ease);
+}
+.page-rotateRoomTopIn {
+    @include transform-origin(50% 0%);
+    @include animation(rotateRoomTopIn, .8s, both, ease);
+}
+.page-rotateRoomBottomOut {
+    @include transform-origin(50% 0%);
+    @include animation(rotateRoomBottomOut, .8s, both, ease);
+}
+.page-rotateRoomBottomIn {
+    @include transform-origin(50% 100%);
+    @include animation(rotateRoomBottomIn, .8s, both, ease);
+}
+
+/* cube */
+.page-rotateCubeLeftOut {
+    @include transform-origin(100% 50%);
+    @include animation(rotateCubeLeftOut, .6s, both, ease-in);
+}
+.page-rotateCubeLeftIn {
+    @include transform-origin(0% 50%);
+    @include animation(rotateCubeLeftIn, .6s, both, ease-in);
+}
+.page-rotateCubeRightOut {
+    @include transform-origin(0% 50%);
+    @include animation(rotateCubeRightOut, .6s, both, ease-in);
+}
+.page-rotateCubeRightIn {
+    @include transform-origin(100% 50%);
+    @include animation(rotateCubeRightIn, .6s, both, ease-in);
+}
+.page-rotateCubeTopOut {
+    @include transform-origin(50% 100%);
+    @include animation(rotateCubeTopOut, .6s, both, ease-in);
+}
+.page-rotateCubeTopIn {
+    @include transform-origin(50% 0%);
+    @include animation(rotateCubeTopIn, .6s, both, ease-in);
+}
+.page-rotateCubeBottomOut {
+    @include transform-origin(50% 0%);
+    @include animation(rotateCubeBottomOut, .6s, both, ease-in);
+}
+.page-rotateCubeBottomIn {
+    @include transform-origin(50% 100%);
+    @include animation(rotateCubeBottomIn, .6s, both, ease-in);
+}
+
+/* carousel */
+.page-rotateCarouselLeftOut {
+    @include transform-origin(100% 50%);
+    @include animation(rotateCarouselLeftOut, .8s, both, ease);
+}
+.page-rotateCarouselLeftIn {
+    @include transform-origin(0% 50%);
+    @include animation(rotateCarouselLeftIn, .8s, both, ease);
+}
+.page-rotateCarouselRightOut {
+    @include transform-origin(0% 50%);
+    @include animation(rotateCarouselRightOut, .8s, both, ease);
+}
+.page-rotateCarouselRightIn {
+    @include transform-origin(100% 50%);
+    @include animation(rotateCarouselRightIn, .8s, both, ease);
+}
+.page-rotateCarouselTopOut {
+    @include transform-origin(50% 100%);
+    @include animation(rotateCarouselTopOut, .8s, both, ease);
+}
+.page-rotateCarouselTopIn {
+    @include transform-origin(50% 0%);
+    @include animation(rotateCarouselTopIn, .8s, both, ease);
+}
+.page-rotateCarouselBottomOut {
+    @include transform-origin(50% 0%);
+    @include animation(rotateCarouselBottomOut, .8s, both, ease);
+}
+.page-rotateCarouselBottomIn {
+    @include transform-origin(50% 100%);
+    @include animation(rotateCarouselBottomIn, .8s, both, ease);
+}
+
+/* sides */
+.page-rotateSidesOut {
+    @include transform-origin(-50% 50%);
+    @include animation(rotateSidesOut, .5s, both, ease-in);
+}
+.page-rotateSidesIn {
+    @include transform-origin(150% 50%);
+    @include animation(rotateSidesIn, .5s, both, ease-out);
+}
+
+/* slide */
+.page-rotateSlideOut {
+    @include animation(rotateSlideOut, 1s, both, ease);
+}
+.page-rotateSlideIn {
+    @include animation(rotateSlideIn, 1s, both, ease);
+}
+
+/********************************* keyframes **************************************/
+
+/* rotate sides first and scale */
+
+@include keyframe (rotateRightSideFirst) {
+    40% { @include transform(rotateY(15deg)); opacity: .8; @include animation-timing-function(ease-out); }
+    100% { @include transform(scale(0.8) translateZ(-200px)); opacity:0; }
+}
+
+@include keyframe (rotateLeftSideFirst) {
+    40% { @include transform(rotateY(-15deg)); opacity: .8; @include animation-timing-function(ease-out); }
+    100% { @include transform(scale(0.8) translateZ(-200px)); opacity:0; }
+}
+
+@include keyframe (rotateTopSideFirst) {
+    40% { @include transform(rotateX(15deg)); opacity: .8; @include animation-timing-function(ease-out); }
+    100% { @include transform(scale(0.8) translateZ(-200px)); opacity:0; }
+}
+
+@include keyframe (rotateBottomSideFirst) {
+    40% { @include transform(rotateX(-15deg)); opacity: .8; @include animation-timing-function(ease-out); }
+    100% { @include transform(scale(0.8) translateZ(-200px)); opacity:0; }
+}
+
+/* flip */
+
+@include keyframe (flipOutRight) {
+    to { @include transform(translateZ(-1000px) rotateY(90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipInLeft) {
+    from { @include transform(translateZ(-1000px) rotateY(-90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipOutLeft) {
+    to { @include transform(translateZ(-1000px) rotateY(-90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipInRight) {
+    from { @include transform(translateZ(-1000px) rotateY(90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipOutTop) {
+    to { @include transform(translateZ(-1000px) rotateX(90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipInBottom) {
+    from { @include transform(translateZ(-1000px) rotateX(-90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipOutBottom) {
+    to { @include transform(translateZ(-1000px) rotateX(-90deg)); opacity: 0.2; }
+}
+
+@include keyframe (flipInTop) {
+    from { @include transform(translateZ(-1000px) rotateX(90deg)); opacity: 0.2; }
+}
+
+/* fall */
+
+@include keyframe (rotateFall) {
+    0% { @include transform(rotateZ(0deg)); }
+    20% { @include transform(rotateZ(10deg)); @include animation-timing-function(ease-out); }
+    40% { @include transform(rotateZ(17deg)); }
+    60% { @include transform(rotateZ(16deg)); }
+    100% { @include transform(translateY(100%) rotateZ(17deg)); }
+}
+
+/* newspaper */
+
+@include keyframe (rotateOutNewspaper) {
+    to { @include transform(translateZ(-3000px) rotateZ(360deg)); opacity: 0; }
+}
+
+@include keyframe (rotateInNewspaper) {
+    from { @include transform(translateZ(-3000px) rotateZ(-360deg)); opacity: 0; }
+}
+
+/* push */
+
+@include keyframe (rotatePushLeft) {
+    to { opacity: 0; @include transform(rotateY(90deg)); }
+}
+
+@include keyframe (rotatePushRight) {
+    to { opacity: 0; @include transform(rotateY(-90deg)); }
+}
+
+@include keyframe (rotatePushTop) {
+    to { opacity: 0; @include transform(rotateX(-90deg)); }
+}
+
+@include keyframe (rotatePushBottom) {
+    to { opacity: 0; @include transform(rotateX(90deg)); }
+}
+
+/* pull */
+
+@include keyframe (rotatePullRight) {
+    from { opacity: 0; @include transform(rotateY(-90deg)); }
+}
+
+@include keyframe (rotatePullLeft) {
+    from { opacity: 0; @include transform(rotateY(90deg)); }
+}
+
+@include keyframe (rotatePullTop) {
+    from { opacity: 0; @include transform(rotateX(-90deg)); }
+}
+
+@include keyframe (rotatePullBottom) {
+    from { opacity: 0; @include transform(rotateX(90deg)); }
+}
+
+/* fold */
+
+@include keyframe (rotateFoldRight) {
+    to { opacity: 0; @include transform(translateX(100%) rotateY(90deg)); }
+}
+
+@include keyframe (rotateFoldLeft) {
+    to { opacity: 0; @include transform(translateX(-100%) rotateY(-90deg)); }
+}
+
+@include keyframe (rotateFoldTop) {
+    to { opacity: 0; @include transform(translateY(-100%) rotateX(90deg)); }
+}
+
+@include keyframe (rotateFoldBottom) {
+    to { opacity: 0; @include transform(translateY(100%) rotateX(-90deg)); }
+}
+
+/* unfold */
+
+@include keyframe (rotateUnfoldLeft) {
+    from { opacity: 0; @include transform(translateX(-100%) rotateY(-90deg)); }
+}
+
+@include keyframe (rotateUnfoldRight) {
+    from { opacity: 0; @include transform(translateX(100%) rotateY(90deg)); }
+}
+
+@include keyframe (rotateUnfoldTop) {
+    from { opacity: 0; @include transform(translateY(-100%) rotateX(90deg)); }
+}
+
+@include keyframe (rotateUnfoldBottom) {
+    from { opacity: 0; @include transform(translateY(100%) rotateX(-90deg)); }
+}
+
+/* room walls */
+
+@include keyframe (rotateRoomLeftOut) {
+    to { opacity: .3; @include transform(translateX(-100%) rotateY(90deg)); }
+}
+
+@include keyframe (rotateRoomLeftIn) {
+    from { opacity: .3; @include transform(translateX(100%) rotateY(-90deg)); }
+}
+
+@include keyframe (rotateRoomRightOut) {
+    to { opacity: .3; @include transform(translateX(100%) rotateY(-90deg)); }
+}
+
+@include keyframe (rotateRoomRightIn) {
+    from { opacity: .3; @include transform(translateX(-100%) rotateY(90deg)); }
+}
+
+@include keyframe (rotateRoomTopOut) {
+    to { opacity: .3; @include transform(translateY(-100%) rotateX(-90deg)); }
+}
+
+@include keyframe (rotateRoomTopIn) {
+    from { opacity: .3; @include transform(translateY(100%) rotateX(90deg)); }
+}
+
+@include keyframe (rotateRoomBottomOut) {
+    to { opacity: .3; @include transform(translateY(100%) rotateX(90deg)); }
+}
+
+@include keyframe (rotateRoomBottomIn) {
+    from { opacity: .3; @include transform(translateY(-100%) rotateX(-90deg)); }
+}
+
+/* cube */
+
+@include keyframe (rotateCubeLeftOut) {
+    50% { @include animation-timing-function(ease-out);  @include transform(translateX(-50%) translateZ(-200px) rotateY(-45deg)); }
+    100% { opacity: .3; @include transform(translateX(-100%) rotateY(-90deg)); }
+}
+
+@include keyframe (rotateCubeLeftIn) {
+    0% { opacity: .3; @include transform(translateX(100%) rotateY(90deg)); }
+    50% { @include animation-timing-function(ease-out);  @include transform(translateX(50%) translateZ(-200px) rotateY(45deg)); }
+}
+
+@include keyframe (rotateCubeRightOut) {
+    50% { @include animation-timing-function(ease-out); @include transform(translateX(50%) translateZ(-200px) rotateY(45deg)); }
+    100% { opacity: .3; @include transform(translateX(100%) rotateY(90deg)); }
+}
+
+@include keyframe (rotateCubeRightIn) {
+    0% { opacity: .3; @include transform(translateX(-100%) rotateY(-90deg)); }
+    50% { @include animation-timing-function(ease-out); @include transform(translateX(-50%) translateZ(-200px) rotateY(-45deg)); }
+}
+
+@include keyframe (rotateCubeTopOut) {
+    50% { @include animation-timing-function(ease-out); @include transform(translateY(-50%) translateZ(-200px) rotateX(45deg)); }
+    100% { opacity: .3; @include transform(translateY(-100%) rotateX(90deg)); }
+}
+
+@include keyframe (rotateCubeTopIn) {
+    0% { opacity: .3; @include transform(translateY(100%) rotateX(-90deg)); }
+    50% { @include animation-timing-function(ease-out); @include transform(translateY(50%) translateZ(-200px) rotateX(-45deg)); }
+}
+
+@include keyframe (rotateCubeBottomOut) {
+    50% { @include animation-timing-function(ease-out); @include transform(translateY(50%) translateZ(-200px) rotateX(-45deg)); }
+    100% { opacity: .3; @include transform(translateY(100%) rotateX(-90deg)); }
+}
+
+@include keyframe (rotateCubeBottomIn) {
+    0% { opacity: .3; @include transform(translateY(-100%) rotateX(90deg)); }
+    50% { @include animation-timing-function(ease-out); @include transform(translateY(-50%) translateZ(-200px) rotateX(45deg)); }
+}
+
+/* carousel */
+
+@include keyframe (rotateCarouselLeftOut) {
+    to { opacity: .3; @include transform(translateX(-150%) scale(.4) rotateY(-65deg)); }
+}
+
+@include keyframe (rotateCarouselLeftIn) {
+    from { opacity: .3; @include transform(translateX(200%) scale(.4) rotateY(65deg)); }
+}
+
+@include keyframe (rotateCarouselRightOut) {
+    to { opacity: .3; @include transform(translateX(200%) scale(.4) rotateY(65deg)); }
+}
+
+@include keyframe (rotateCarouselRightIn) {
+    from { opacity: .3; @include transform(translateX(-200%) scale(.4) rotateY(-65deg)); }
+}
+
+@include keyframe (rotateCarouselTopOut) {
+    to { opacity: .3; @include transform(translateY(-200%) scale(.4) rotateX(65deg)); }
+}
+
+@include keyframe (rotateCarouselTopIn) {
+    from { opacity: .3; @include transform(translateY(200%) scale(.4) rotateX(-65deg)); }
+}
+
+@include keyframe (rotateCarouselBottomOut) {
+    to { opacity: .3; @include transform(translateY(200%) scale(.4) rotateX(-65deg)); }
+}
+
+@include keyframe (rotateCarouselBottomIn) {
+    from { opacity: .3; @include transform(translateY(-200%) scale(.4) rotateX(65deg)); }
+}
+
+/* sides */
+
+@include keyframe (rotateSidesOut) {
+    to { opacity: 0; @include transform(translateZ(-500px) rotateY(90deg)); }
+}
+
+@include keyframe (rotateSidesIn) {
+    from { opacity: 0; @include transform(translateZ(-500px) rotateY(-90deg)); }
+}
+
+/* slide */
+
+@include keyframe (rotateSlideOut) {
+    25% { opacity: .5; @include transform(translateZ(-500px)); }
+    75% { opacity: .5; @include transform(translateZ(-500px) translateX(-200%)); }
+    100% { opacity: .5; @include transform(translateZ(-500px) translateX(-200%)); }
+}
+
+@include keyframe (rotateSlideIn) {
+    0%, 25% { opacity: .5; @include transform(translateZ(-500px) translateX(200%)); }
+    75% { opacity: .5; @include transform(translateZ(-500px)); }
+    100% { opacity: 1; @include transform(translateZ(0) translateX(0)); }
+}
+
+/* animation delay classes */
+
+.page-delay100 {
+    @include animation-delay(.1s);
+}
+.page-delay180 {
+    @include animation-delay(.180s);
+}
+.page-delay200 {
+    @include animation-delay(.2s);
+}
+.page-delay300 {
+    @include animation-delay(.3s);
+}
+.page-delay400 {
+    @include animation-delay(.4s);
+}
+.page-delay500 {
+    @include animation-delay(.5s);
+}
+.page-delay700 {
+    @include animation-delay(.7s);
+}
+.page-delay1000 {
+    @include animation-delay(1s);
+}
+
+
+
+/* OTHERS */
+
+
+@include keyframe (pulseAnimation) {
+    0% { @include transform(scale(1)); }
+    30% { @include transform(scale(1)); }
+    40% { @include transform(scale(1.1)); }
+    50% { @include transform(scale(1)); }
+    60% { @include transform(scale(1)); }
+    70% { @include transform(scale(1.08)); }
+    80% { @include transform(scale(1)); }
+    100% { @include transform(scale(1)); }
+}

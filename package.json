@@ -1,0 +1,34 @@
+{
+  "name": "GDG",
+  "title": "GDG website",
+  "url": "http://devfest.xyz",
+  "version": "1.0.0",
+  "description": "a template created by @jvacx",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jvacx/GDGDevFestXV.git"
+  },
+  "readme": "readme.rst",
+  "private": true,
+  "scripts": {
+    "start": "not Defined"
+  },
+  "author": "Victor Aguilar C. @jvacx",
+  "copyright": "2015",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-tasty-swig": "~0.1.0",
+    "grunt-contrib-htmlmin": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-compass": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-watch": "~0.4.4",
+    "connect-livereload": "~0.2.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-open": "~0.2.0",
+    "matchdep": "~0.1.2"
+  },
+  "license": "MIT"
+}

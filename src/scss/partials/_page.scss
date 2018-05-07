@@ -1,0 +1,26 @@
+body {
+    font-family: 'Roboto', Helvetica, serif;
+    font-weight: 400;
+}
+.bg-teal {
+    background-color: $teal !important;
+}
+
+.bg-cyan {
+    background-color: $cyan !important;
+}
+.bg-indigo {
+    background-color: $indigo !important;
+}
+.bg-blue {
+    background-color: $blue !important;
+}
+
+
+[data-template] {
+    // display: none;
+}
+
+.load-bar {
+    z-index: 200 !important;
+}

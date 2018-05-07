@@ -1,0 +1,100 @@
+.schedule-block {
+    padding: 50px 0;
+    background-color: $white;
+    font-family: "Roboto", Helvetica, serif;
+
+
+    .main-title {
+        font-family: "Roboto";
+        font-weight: 300;
+        text-align: center;
+        font-size: 33px;
+        margin-bottom: 1.2em;
+    }
+
+    .tabs .tab a {
+        color: $teal;
+    }
+    .tabs .indicator {
+        background-color: $teal;
+    }
+
+    .download-link {
+        font-size: 20px;
+        color: $teal;
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+.tabs-panel-wrapper {
+    padding-top: 40px !important;
+}
+.schedule-item {
+    overflow: hidden;
+
+    .schedule-item-img {
+        width: 120px;
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        z-index: 9;
+        text-align: center;
+    }
+    .avatar-image {
+        width: $avatar-size;
+        height: $avatar-size;
+        text-align: center;
+        border-radius: 50%;
+        padding: 5px;
+        background-color: $white;
+        border: 2px solid $light_gray;
+    }
+    .schedule-item-info {
+        padding: 0 0 0 70px;
+        box-sizing: border-box;
+    }
+    .item-info-inner {
+        border-left: 2px solid $light_gray;
+        padding: 15px 0 40px 50px;
+        z-index: 10;
+        box-sizing: border-box;
+
+        h5 {
+            font-size: 22px;
+            margin-top: 4px;
+            font-weight: 300;
+        }
+    }
+
+    .item-info-time {
+        vertical-align: middle;
+        color: darken($teal, 10%);
+
+        span {
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 35px;
+            margin-left: 5px;
+            position: relative;
+
+        }
+        .fa {
+            font-size: 1.1em;
+            color: darken($silver, 15%);
+        }
+    }
+    .schedule-break {
+        height: 66px;
+        width: 66px;
+        color: $white;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 18px;
+        background: darken($teal, 10%);
+        border-radius: 50%;
+        display: inline-block;
+        margin-top: 16px;
+    }
+}
