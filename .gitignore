@@ -61,5 +61,5 @@ coverage.xml
 # Deployment Tools
 config/
 fabfile.py
-
+package-lock.json
 
